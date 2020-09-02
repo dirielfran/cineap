@@ -87,7 +87,7 @@
 					<div class="col-sm-3">
 						<div class="form-group">
 							<label for="fecha">Fecha</label>             
-							<form:input type="text" class="form-control" path="fecha" id="fecha" required="required"/>
+							<form:input type="text" class="form-control"  path="fecha" id="fecha" required="required"/>
 						</div>  
 					</div>
 					<div class="col-sm-3">

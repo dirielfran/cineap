@@ -68,7 +68,7 @@ public class PeliculasController {
 		//Se eliminan los detalles de la pelicula
 		serviceDetalle.eliminar(pelicula.getDetalle().getId());
 		//se añade un objeto de tipo RedirectAttributes para enviar mensaje en un redirect
-		redirect.addFlashAttribute("mensaje", "La pelicula fue eliminada.");
+		redirect.addFlashAttribute("mensajeEliminar", "La pelicula fue eliminada.");
 		return "redirect:/pelicula/indexPagina";		
 	}
 
