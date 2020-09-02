@@ -231,7 +231,7 @@
 	<script src="${urlPublic}js/main.js"></script>
 	<script>
       $(function () {
-            $("#fechaEstreno").datepicker({dateFormat: 'dd-mm-yy'});
+            $("#fechaEstreno").datepicker({format: 'dd-mm-yyyy'});
         }
       );
     </script>
