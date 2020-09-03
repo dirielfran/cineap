@@ -170,7 +170,7 @@
 	<script src="${urlPublic}js/main.js"></script>
 	<script>
       $(function () {
-            $("#fecha").datepicker({dateFormat: 'dd-mm-yy'});
+            $("#fecha").datepicker({format: 'dd-mm-yyyy'});
         }
       );
     </script>
