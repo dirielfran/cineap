@@ -15,13 +15,13 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 		<!-- Para Habilitar Upload Files para Windows-->
-<!-- 		<multipart-config> -->
-<!-- 					<location>D:\tmp</location> -->
-<!-- 		</multipart-config> -->
-		<!-- Para Habilitar Upload Files para linux-->
 		<multipart-config>
-			<location>/tmp</location>
+					<location>D:\tmp</location>
 		</multipart-config>
+		<!-- Para Habilitar Upload Files para linux-->
+<!-- 		<multipart-config> -->
+<!-- 			<location>/tmp</location> -->
+<!-- 		</multipart-config> -->
 	</servlet>
 
 <!-- 	<servlet-mapping> -->

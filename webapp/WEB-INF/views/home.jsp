@@ -81,7 +81,7 @@
 	</section>
 
 
-	<section class="ftco-section" style="padding-bottom: 1em;">
+	<section class="ftco-section" style="padding-bottom: 1em; padding-top: 6em">
 		<div class="container">
 			<div class="row no-gutters ftco-services">
 				<div

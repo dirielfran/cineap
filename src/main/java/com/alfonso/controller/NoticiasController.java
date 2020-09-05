@@ -86,7 +86,7 @@ public class NoticiasController {
 	@GetMapping(value="/delete/{id}")	
 	public String eliminarNoticia(@PathVariable("id") int idNoticia, RedirectAttributes atributo) {
 		serviceNoticias.deleteNoticia(idNoticia);
-		atributo.addFlashAttribute("mensaje", "La Noticia fue eliminada.");
+		atributo.addFlashAttribute("mensajeEliminar", "La noticia fue eliminada.");
 		return "redirect:/noticias/indexPagina";
 	}
 }

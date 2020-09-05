@@ -91,7 +91,7 @@ public class UsuariosController {
 		// se guarda el usuario en la base de datos
 		servicesUsuario.guardar(usuario);
 		redirect.addFlashAttribute("mensaje", "Usuario ingresado con exito.");
-		return "redirect:/usuarios/index";
+		return "redirect:/usuarios/indexPagina";
 	}
 	
 	@GetMapping(value="/index")
