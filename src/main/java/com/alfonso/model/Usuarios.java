@@ -21,11 +21,11 @@ public class Usuarios {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id ;
+	private Integer id ;
 	@NotEmpty
 	private String cuenta;
 	private String pwd;
-	private int activo;
+	private int activo = 1;
 	@NotEmpty
 	@Email
 	private String email;
@@ -58,10 +58,10 @@ public class Usuarios {
 	public Usuarios() {
 	}
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getCuenta() {

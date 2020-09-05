@@ -66,31 +66,44 @@ public class UsuariosController {
 	}
 	
 	@PostMapping(value="/save")
-	public String guardar(@Valid @ModelAttribute("usuario") Usuarios usuario, BindingResult result, 
-			@RequestParam("perfil") String perfil,@RequestParam("pwd") String pwd, RedirectAttributes redirect, HttpServletRequest request, 
-			Model modelo) {
-		
+	public String guardar(@Valid @ModelAttribute("usuario") Usuarios usuario, BindingResult result,
+	@RequestParam("perfil") String perfil, @RequestParam("pwd") String password,RedirectAttributes redirect ,Model modelo) {
+	
+		// se recorre la lista de errores generada por el BindingResult en caso de
+		// fallas con el DataBinding
 		if(result.hasErrors()) {
-			List<String> errores= new ArrayList<String>();
-			for (FieldError err : result.getFieldErrors()) {	
-				errores.add("Error en el campo '"+err.getField()+"' "+err.getDefaultMessage());
-			}
-			modelo.addAttribute("listaErrores", errores);
 			return "usuarios/formUsuario";
 		}
-		// se encripta el password
-		String passEncryp = encoder.encode(pwd);
-		// se setea el password encriptado
-		usuario.setPwd(passEncryp);
-		usuario.setActivo(1);
 
+		if (password.isEmpty()) {
+			if (usuario.getId() != null) {
+				Usuarios usuarioBD= servicesUsuario.buscarId(usuario.getId());
+				usuario.setPwd(usuarioBD.getPwd());
+			}else {
+				modelo.addAttribute("msj", "Debe ingresar una contraseña");
+				return "usuarios/formUsuario";
+			}
+		}else {
+			// se encripta el password
+			String passEncryp = encoder.encode(password);
+			// se setea el password encriptado
+			usuario.setPwd(passEncryp);
+		}
+//		usuario.setActivo(1);
 		// se crea un perfil nuevo y se le setea la cuenta y el perfil
-		Perfil perfilTmp = new Perfil();
-		perfilTmp.setId(Integer.valueOf(perfil));
-		usuario.agregar(perfilTmp);
+		Perfil perfil1 = new Perfil();
+		// perfilTmp.setCuenta(usuario.getCuenta());
+		perfil1.setId(Integer.valueOf(perfil));
+		// se guarda en la base de datos
+		// servicesPerfil.guardar(perfil1);
+		usuario.agregar(perfil1);
+	
 		// se guarda el usuario en la base de datos
 		servicesUsuario.guardar(usuario);
 		redirect.addFlashAttribute("mensaje", "Usuario ingresado con exito.");
+		System.out.println(usuario);
+		System.out.println(perfil);
+
 		return "redirect:/usuarios/indexPagina";
 	}
 	

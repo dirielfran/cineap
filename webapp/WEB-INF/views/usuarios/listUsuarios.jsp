@@ -96,6 +96,7 @@
         </table>
         <nav aria-label="">
 			<ul class="pager">
+				<h1>${listaUsuarios.number}</h1>
 				<li><a href="${url}usuarios/indexPagina?page=${listaUsuarios.number - 1 }">Anterior</a></li>
 				<li><a href="${url}usuarios/indexPagina?page=${listaUsuarios.number + 1 }">Siguiente</a></li>
 			</ul>

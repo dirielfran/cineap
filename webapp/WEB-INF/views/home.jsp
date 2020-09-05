@@ -173,16 +173,18 @@
         			<div class="row">
 
 						<c:forEach items="${peliculas }" var="pelicula">
-				          <div class="col-xs-12 col-sm-6 col-md-3" style="text-align: center;">
-				            <img style="border-radius: 6px; margin-top: 50px;" src="${urlPublic}images/${pelicula.imagen}" alt="Generic placeholder image" width="150" height="200">
-				            <h4 style="text-align: center; font-size: 18px;">${pelicula.titulo }</h4>
-				            <h4 style="text-align: center; font-size: 18px;">
-				              <span class="label label-default">${pelicula.clasificacion }</span>
-				              <span class="label label-default">${pelicula.duracion } min</span>
-				              <span class="label label-default">${pelicula.genero }</span>
-				            </h4>         
-				            <p><a class="btn btn-primary btn-boton" href="${urlRoot}detail?idPelicula=${pelicula.id }&fecha=${fechaBusqueda}" role="button">Consulta Horarios &raquo;</a></p>             
-				          </div>
+							<c:if test="${pelicula.estatus eq 'Activa'}">
+					          <div class="col-xs-12 col-sm-6 col-md-3" style="text-align: center;">
+					            <img style="border-radius: 6px; margin-top: 50px;" src="${urlPublic}images/${pelicula.imagen}" alt="Generic placeholder image" width="150" height="200">
+					            <h4 style="text-align: center; font-size: 18px;">${pelicula.titulo }</h4>
+					            <h4 style="text-align: center; font-size: 18px;">
+					              <span class="label label-default">${pelicula.clasificacion }</span>
+					              <span class="label label-default">${pelicula.duracion } min</span>
+					              <span class="label label-default">${pelicula.genero }</span>
+					            </h4>         
+					            <p><a class="btn btn-primary btn-boton" href="${urlRoot}detail?idPelicula=${pelicula.id }&fecha=${fechaBusqueda}" role="button">Consulta Horarios &raquo;</a></p>             
+					          </div>
+				          </c:if>
 					    </c:forEach>
           
 
@@ -201,23 +203,25 @@
 					<span class="subheading" >Noticias y novedades</span>
 					<div class="carousel-testimony owl-carousel">
 						<c:forEach items="${noticias}" var="noticia">
-							<div class="item">
-								<div class="testimony-wrap p-4 pb-5">
-									<div class="user-img mb-5"
-										style="background-image: url(${urlPublic}images/person_1.jpg)">
-										<span
-											class="quote d-flex align-items-center justify-content-center">
-											<i class="icon-quote-left"></i>
-										</span>
-									</div>
-									<h4 class="mb-4">${noticia.titulo}</h4>
-									<div class="text text-center">
-										<p class="mb-5 pl-4 line">${noticia.detalle}</p>
-										<p class="name">Fecha: </p>
-										<span class="position"><fmt:formatDate value="${noticia.fecha}" pattern="dd-MM-yyyy"/></span>
+							<c:if test="${noticia.estatus eq 'Activa'}">
+								<div class="item">
+									<div class="testimony-wrap p-4 pb-5">
+										<div class="user-img mb-5"
+											style="background-image: url(${urlPublic}images/person_1.jpg)">
+											<span
+												class="quote d-flex align-items-center justify-content-center">
+												<i class="icon-quote-left"></i>
+											</span>
+										</div>
+										<h4 class="mb-4">${noticia.titulo}</h4>
+										<div class="text text-center">
+											<p class="mb-5 pl-4 line">${noticia.detalle}</p>
+											<p class="name">Fecha: </p>
+											<span class="position"><fmt:formatDate value="${noticia.fecha}" pattern="dd-MM-yyyy"/></span>
+										</div>
 									</div>
 								</div>
-							</div>
+							</c:if>
 						</c:forEach>						
 					</div>
 				</div>

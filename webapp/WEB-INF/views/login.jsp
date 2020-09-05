@@ -74,7 +74,7 @@
 	                            </div>
 	                            <div class="group-input">
 	                                <label for="password" class="sr-only">Contraseña</label>
-									<input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+									<input type="password" id="password" name="password" class="form-control" placeholder="Password" >
 									<input type="hidden"name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	                            </div>
 	                            <div class="group-input gi-check">
