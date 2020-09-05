@@ -50,9 +50,9 @@ public class PeliculasController {
 	@GetMapping(value="/edit/{id}")
 	public String editar(@PathVariable("id")int idPelicula, Model modelo) {
 		Pelicula pelicula = servicePeliculas.buscarPorId(idPelicula);
-		//Se añade al model la lsta de generos
+		//Se aï¿½ade al model la lsta de generos
 		modelo.addAttribute("generos", servicePeliculas.buscarGeneros());
-		//Se añade añ model que necesita el formulario para renderizar los datos 
+		//Se aï¿½ade aï¿½ model que necesita el formulario para renderizar los datos 
 		modelo.addAttribute("pelicula",pelicula);
 		
 		return "peliculas/formPelicula";
@@ -67,7 +67,7 @@ public class PeliculasController {
 		servicePeliculas.eliminar(idEliminar);
 		//Se eliminan los detalles de la pelicula
 		serviceDetalle.eliminar(pelicula.getDetalle().getId());
-		//se añade un objeto de tipo RedirectAttributes para enviar mensaje en un redirect
+		//se aï¿½ade un objeto de tipo RedirectAttributes para enviar mensaje en un redirect
 		redirect.addFlashAttribute("mensajeEliminar", "La pelicula fue eliminada.");
 		return "redirect:/pelicula/indexPagina";		
 	}

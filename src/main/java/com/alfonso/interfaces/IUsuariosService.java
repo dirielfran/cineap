@@ -13,4 +13,5 @@ public interface IUsuariosService {
 	Usuarios getUsuario(int id);
 	void eliminarUsu(int id);
 	Page<Usuarios> getUsuarios(Pageable pagina);
+	Usuarios buscarId(Integer id);
 } 

@@ -13,6 +13,7 @@
 <meta name="author" content="">
 <title>Creacion de Usuario</title>
 
+<spring:url value="/usuarios/save" var="urlForm"></spring:url>
 <spring:url value="/" var="urlRoot"></spring:url>
 <spring:url value="/resources/" var="urlPublic"></spring:url>
 
@@ -92,7 +93,7 @@
 					<div class="col-sm-3">
 						<div class="form-group">
 							<label for="pwd">Password</label>             
-							<input type="password" class="form-control" name="pwd" id="pwd" required="required"/>
+							<input type="password" class="form-control" name="pwd" id="pwd"/>
 						</div>  
 					</div>
 					
@@ -108,7 +109,16 @@
 							<form:input type="text" class="form-control" path="telefono" id="telefono" required="required"/>
 						</div>  
 					</div>
-
+					
+					 <div class="col-sm-3">
+		            <div class="form-group">
+		              <label for="estatus" class="control-label">Estatus</label>              
+		              <form:select id="genero" path="activo" class="form-control">
+			                <form:option value="1">Activa</form:option>
+			                <form:option value="0">Inactiva</form:option>               
+		              </form:select>             
+		            </div> 
+		          </div>
 				</div>
 
 				<button type="submit" class="btn btn-danger" >Guardar</button>

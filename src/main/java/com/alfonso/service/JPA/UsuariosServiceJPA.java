@@ -47,5 +47,16 @@ public class UsuariosServiceJPA implements IUsuariosService{
 	public Page<Usuarios> getUsuarios(Pageable pagina) {
 		return usuariosRepo.findAll(pagina);
 	}
+
+	@Override
+	public Usuarios buscarId(Integer id) {
+		
+		Optional<Usuarios> opt = usuariosRepo.findById(id);
+		if (opt.isPresent()) {
+			return opt.get();
+		}
+		
+		return null;
+	}
 	
 }
