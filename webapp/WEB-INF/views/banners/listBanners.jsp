@@ -100,8 +100,8 @@
 	       		</table>
 		       <nav aria-label="">
 						<ul class="pager">
-							<li><a href="${urlRoot}indexPagina?page=${banner.number - 1 }">Anterior</a></li>
-							<li><a href="${urlRoot}indexPagina?page=${banner.number + 1 }">Siguiente</a></li>
+							<li><a href="${urlRoot}indexPagina?page=${banners.number - 1 }">Anterior</a></li>
+							<li><a href="${urlRoot}indexPagina?page=${banners.number + 1 }">Siguiente</a></li>
 						</ul>
 				</nav>		
 			</div>
