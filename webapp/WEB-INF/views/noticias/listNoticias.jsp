@@ -52,14 +52,15 @@
 </head>
 
 <body class="goto-here">
-	
 	<!-- Fixed navbar -->
 		<jsp:include page="../includes/menu.jsp"></jsp:include>
-	<!-- END nav -->
+	
 	<section class="ftco-section">
 		<div class="container theme-showcase" role="main">
 			<c:if test="${mensaje != null }">
 				<div class='alert alert-success' role="alert">${mensaje}</div>
+			</c:if><c:if test="${mensajeEliminar != null }">
+				<div class='alert alert-danger' role="alert">${mensajeEliminar}</div>
 			</c:if>
 
       		<h3>Listado de Noticias</h3>

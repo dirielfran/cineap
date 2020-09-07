@@ -65,6 +65,10 @@
 			 <c:if test="${msg != null }">
 				<div class='alert alert-danger' role="alert">${msg}</div>
 			</c:if>
+			
+			 <c:if test="${mensajeEliminar != null }">
+				<div class='alert alert-danger' role="alert">${mensajeEliminar}</div>
+			</c:if>
 
       		<h3>Listado de Horarios</h3>
       

@@ -100,9 +100,10 @@ public class UsuariosController {
 	
 		// se guarda el usuario en la base de datos
 		servicesUsuario.guardar(usuario);
-		redirect.addFlashAttribute("mensaje", "Su usuario se ha insertado");
+		redirect.addFlashAttribute("mensaje", "Usuario ingresado con exito.");
 		System.out.println(usuario);
 		System.out.println(perfil);
+
 		return "redirect:/usuarios/indexPagina";
 	}
 	

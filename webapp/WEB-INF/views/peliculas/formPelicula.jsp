@@ -233,7 +233,7 @@
       $(function () {
             $("#fechaEstreno").datepicker({format: 'dd-mm-yyyy'});
         }
-      );
+        );
     </script>
 	
 </body>
