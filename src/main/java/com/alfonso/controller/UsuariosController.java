@@ -106,12 +106,12 @@ public class UsuariosController {
 		return "redirect:/usuarios/indexPagina";
 	}
 	
-	@GetMapping(value="/index")
-	public String index(Model modelo) {
-		List<Usuarios> usuarios = servicesUsuario.buscarUsuarios();
-		modelo.addAttribute("listaUsuarios", usuarios);
-		return "usuarios/listUsuarios";
-	}
+//	@GetMapping(value="/index")
+//	public String index(Model modelo) {
+//		List<Usuarios> usuarios = servicesUsuario.buscarUsuarios();
+//		modelo.addAttribute("listaUsuarios", usuarios);
+//		return "usuarios/listUsuarios";
+//	}
 	
 	@GetMapping(value="/indexPagina")
 	public String indicePaginado(Model modelo, Pageable pagina) {

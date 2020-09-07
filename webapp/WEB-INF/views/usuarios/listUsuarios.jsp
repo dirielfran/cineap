@@ -88,7 +88,7 @@
 					</c:choose>
 	                <td>
 	                    <a href="${url}usuarios/update/${usuario.id}" class="btn btn-success btn-lg btn-boton" role="button" title="Edit" ><span class="glyphicon glyphicon-pencil"></span></a>
-	                    <a href="${url}usuarios/delete/${usuario.id}" class="btn btn-success btn-lg btn-boton-danger" title="Eliminar" ><span class="glyphicon glyphicon-trash"></span></a>
+	                    <a href="${url}usuarios/delete/${usuario.id}" onclick='return confirm("¿Desea eliminar?")' class="btn btn-success btn-lg btn-boton-danger" title="Eliminar" ><span class="glyphicon glyphicon-trash"></span></a>
 	                </td>
 	            </tr>
             </c:forEach>
@@ -97,8 +97,8 @@
         <nav aria-label="">
 			<ul class="pager">
 				<h1>${listaUsuarios.number}</h1>
-				<li><a href="${url}usuarios/indexPagina?page=${listaUsuarios.number - 1 }">Anterior</a></li>
-				<li><a href="${url}usuarios/indexPagina?page=${listaUsuarios.number + 1 }">Siguiente</a></li>
+				<li><a href="${url}usuarios/indexPagina?page=${usuarios.number - 1 }">Anterior</a></li>
+				<li><a href="${url}usuarios/indexPagina?page=${usuarios.number + 1 }">Siguiente</a></li>
 			</ul>
 		</nav>
 		
