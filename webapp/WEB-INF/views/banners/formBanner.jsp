@@ -101,7 +101,7 @@
 		         </div> 
 		      </div>
 		 
-        	<button type="submit" class="btn btn-danger btn-dangerb" >Guardar</button>   
+        	<button type="submit" onclick="prueba()" class="btn btn-danger btn-dangerb" >Guardar</button>   
 		</form:form>		
 	</div>
 
@@ -148,15 +148,33 @@
 	<script src="${urlPublic}js/jquery.animateNumber.min.js"></script>
 	<script src="${urlPublic}js/bootstrap-datepicker.js"></script>
 	<script src="${urlPublic}js/scrollax.min.js"></script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="${urlPublic}js/google-map.js"></script>
 	<script src="${urlPublic}js/main.js"></script>
+	<script src="${urlPublic}switAlert2/sweetalert2.all.min.js"></script>
 	<script>
       $(function () {
             $("#fecha").datepicker({dateFormat: 'dd-mm-yy'});
         }
       );
-    </script>
+	function prueba(){
+		Swal.fire({
+			  position: 'center',
+			  icon: 'success',
+			  title: 'Su Banner Fue Insertado Con Exito',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+    }
+	$('form').submit( function(event) {
+	       var form = this;
+
+	       event.preventDefault();
+
+	       setTimeout( function () { 
+	           form.submit();
+	       }, 1200);
+	}); 
+	</script>
 </body>
 </html>
