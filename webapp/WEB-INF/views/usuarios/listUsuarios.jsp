@@ -190,8 +190,10 @@
 						      'Eliminado!',
 						      'Tu Banner fue eliminado.',
 						      'success'
-				    )
-				    location.href = elemento;
+				    )			  	  
+				    setTimeout( function () { 
+					    location.href = elemento;
+	     		 	}, 1200);
 				  }
 				})
 		}
