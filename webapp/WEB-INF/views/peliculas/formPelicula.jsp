@@ -177,10 +177,9 @@
 
         
         
-        	<button type="submit" class="btn btn-danger btn-dangerb" >Guardar</button>   
+        	<button type="submit" onclick="prueba()" class="btn btn-danger btn-dangerb" >Guardar</button>   
 		</form:form>	
-	
-	</div>
+		</div>
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
 		<div class="container py-4">
@@ -229,11 +228,26 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="${urlPublic}js/google-map.js"></script>
 	<script src="${urlPublic}js/main.js"></script>
+	<script src="${urlPublic}sweetalert2.all.min.js"></script>
 	<script>
       $(function () {
             $("#fechaEstreno").datepicker({format: 'dd-mm-yyyy'});
         }
         );
+    </script>
+    <script>
+		function prueba(){
+			Swal.fire({
+				  position: 'center',
+				  icon: 'success',
+				  title: 'Su pelicula ha sido guardada',
+				  showConfirmButton: false,
+				  timer: 1500
+				})
+
+			}
+
+	
     </script>
 	
 </body>

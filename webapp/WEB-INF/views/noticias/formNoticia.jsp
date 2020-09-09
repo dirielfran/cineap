@@ -94,11 +94,11 @@
 	          <div class="col-sm-12">
 	            <div class="form-group">
 	              <label for="detalle">Detalles</label>             
-	              <form:textarea class="form-control" path="detalle" id="detalle" rows="10"></form:textarea>
+	              <textarea class="form-control" name="detalle" id="detalle" rows="10"></textarea>
 	            </div>  
 	          </div>
 	        </div>
-        	<button type="submit" class="btn btn-danger btn-dangerb" >Guardar</button>   
+        	<button type="submit" onclick="prueba()" class="btn btn-danger btn-dangerb" >Guardar</button>   
 		</form:form>		
 	</div>
 
@@ -107,7 +107,7 @@
 			<div class="row d-flex justify-content-center py-5">
 				<div class="col-md-6">
 					<h2 style="font-size: 22px;" class="mb-0">Suscribase a nuestro correo</h2>
-					<span>Eviaremos e-mails acerca de los ultimos estrenos</span>
+					<span>Enviaremos e-mails acerca de los ultimos estrenos</span>
 				</div>
 				<div class="col-md-6 d-flex align-items-center">
 					<form action="#" class="subscribe-form">
@@ -149,6 +149,29 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="${urlPublic}js/google-map.js"></script>
 	<script src="${urlPublic}js/main.js"></script>
+	<script src="${urlPublic}tinymce/tinymce.min.js"></script>
+	<script src="${urlPublic}sweetalert2.all.min.js"></script>
+    <script>
+      tinymce.init({
+          selector: '#detalle',
+          plugins: "textcolor, table lists code",
+          toolbar: " undo redo | bold italic | alignleft aligncenter alignright alignjustify \n\
+                    | bullist numlist outdent indent | forecolor backcolor table code"
+      });
+    </script>
+    <script>
+		function prueba(){
+			Swal.fire({
+				  position: 'center',
+				  icon: 'success',
+				  title: 'Su pelicula ha sido guardada',
+				  showConfirmButton: false,
+				  timer: 1500
+				})
+
+			}
+
+    </script>
 
 </body>
 </html>

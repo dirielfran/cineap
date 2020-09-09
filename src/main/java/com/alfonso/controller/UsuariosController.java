@@ -56,7 +56,7 @@ public class UsuariosController {
 	public String deleteUsu(@PathVariable("id") Integer idUsuario, RedirectAttributes redirect) {
 		Usuarios usuario = servicesUsuario.getUsuario(idUsuario);
 		servicesUsuario.eliminarUsu(idUsuario);
-		redirect.addFlashAttribute("mensaje", "El usuario ha sido eliminado de manera exitosa.");
+		redirect.addFlashAttribute("mensajeEliminar", "El usuario ha sido eliminado de manera exitosa.");
 		return "redirect:/usuarios/indexPagina";
 	}
 	

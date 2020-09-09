@@ -57,6 +57,9 @@
 		<c:if test="${mensaje != null }">
 			<div class="alert alert-success">${mensaje}</div>
 		</c:if>
+		<c:if test="${mensajeEliminar != null }">
+			<div class="alert alert-danger">${mensajeEliminar}</div>
+		</c:if>
       	<h3>Listado de Usuarios</h3>
 		<a href="${urlForm}" class="btn btn-success btn-boton" role="button" title="Nuevo Usuario" >Nuevo Usuario</a><br><br>
 		<div class="table-responsive">

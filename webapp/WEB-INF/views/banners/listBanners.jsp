@@ -61,6 +61,9 @@
 	    	<c:if test="${mensaje != null }">
 				<div class='alert alert-success' role="alert">${mensaje}</div>
 			</c:if>
+			<c:if test="${mensajeEliminar != null }">
+				<div class='alert alert-danger' role="alert">${mensajeEliminar}</div>
+			</c:if>
 
       		<h3>Listado de imagenes del Banner</h3>
       

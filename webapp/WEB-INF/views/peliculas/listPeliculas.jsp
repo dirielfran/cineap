@@ -94,7 +94,7 @@
 			                </c:choose>
 			                <td>
 		                   		<a href="${urlEdit}/${pelicula.id}" class="btn btn-success btn-lg btn-boton" role="button"  title="Edit" ><span class="glyphicon glyphicon-pencil"></span></a>
-		                    	<a href="${urlDelete}/${pelicula.id}" onClick='return confirm("¿Desea Eliminar?")' class="btn btn-success btn-lg btn-boton-danger" role="button" title="Eliminar" ><span class="glyphicon glyphicon-trash"></span></a>
+		                    	<a href="#" onClick="prueba('${urlDelete}/${pelicula.id}')" class="btn btn-success btn-lg btn-boton-danger" role="button" title="Eliminar" ><span class="glyphicon glyphicon-trash"></span></a>
 		                	</td>
 		           	 	</tr>
 		            </c:forEach>		                    
@@ -156,5 +156,50 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="${urlPublic}js/google-map.js"></script>
 	<script src="${urlPublic}js/main.js"></script>
+	<script src="${urlPublic}sweetalert2.all.min.js"></script>
+	<script>
+		function prueba(elemento){
+			var boton=document.getElementById("botonEliminar")
+			const swalWithBootstrapButtons = Swal.mixin({
+			  customClass: {
+			    confirmButton: 'btn btn-success',
+			    cancelButton: 'btn btn-danger'
+			  },
+			  buttonsStyling: false
+			})
+			
+			swalWithBootstrapButtons.fire({
+			  title: 'Estás seguro?',
+			  text: "No puedes revertir este cambio",
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonText: 'Si, borrar',
+			  cancelButtonText: 'No, cancelar',
+			  reverseButtons: true
+			}).then((result) => {
+			  if (result.value) {
+			    swalWithBootstrapButtons.fire(
+			      'Borrado!',
+			      'Tu archivo se borro.',
+			      'success'
+			    )
+			    location.href = elemento;
+			  } else if (
+			    /* Read more about handling dismissals below */
+			    result.dismiss === Swal.DismissReason.cancel
+			  ) {
+			    swalWithBootstrapButtons.fire(
+			      'Cancelado',
+			      'Su archivo está a salvo :)',
+			      'error'
+			    )
+			  }
+			})
+			
+			};
+	</script>	
+	
+	
+	
 
 </body>

@@ -62,10 +62,6 @@
 				<div class='alert alert-success' role="alert">${mensaje}</div>
 			</c:if>
 			
-			 <c:if test="${msg != null }">
-				<div class='alert alert-danger' role="alert">${msg}</div>
-			</c:if>
-			
 			 <c:if test="${mensajeEliminar != null }">
 				<div class='alert alert-danger' role="alert">${mensajeEliminar}</div>
 			</c:if>

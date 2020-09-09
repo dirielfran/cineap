@@ -77,7 +77,7 @@ public class BannerController {
 	public String eliminar(@PathVariable("id")int idEliminar, RedirectAttributes atributo) {
 		bannerService.eliminar(idEliminar);
 		//se añade un objeto de tipo RedirectAttributes para enviar mensaje en un redirect
-		atributo.addFlashAttribute("mensaje", "El banner fue eliminado.");
+		atributo.addFlashAttribute("mensajeEliminar", "El banner fue eliminado.");
 		return "redirect:/banners/indexPagina";
 	}
 	
