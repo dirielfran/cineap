@@ -88,7 +88,7 @@
 			                <td>${horario.precio}</td>              
 			                <td>
 								<a href="${urlEdit}${horario.id}" class="btn btn-success btn-lg btn-boton" role="button" title="Edit" ><span class="glyphicon glyphicon-pencil"></span></a>
-								<a href="${urlDelete}${horario.id}" onClick='return confirm("¿Desea Eliminar?")' class="btn btn-success btn-lg btn-boton-danger" role="button" title="Delete" ><span class="glyphicon glyphicon-trash"></span></a>
+								<a href="#" onClick='prueba("${urlDelete}${horario.id}")' class="btn btn-success btn-lg btn-boton-danger" role="button" title="Delete" ><span class="glyphicon glyphicon-trash"></span></a>
 							</td>
 			            </tr>
 			         </c:forEach> 		                    
@@ -149,5 +149,45 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="${urlPublic}js/google-map.js"></script>
 	<script src="${urlPublic}js/main.js"></script>
+	<script src="${urlPublic}switAlert2/sweetalert2.all.min.js"></script>
+
+	<script>
+		function prueba(elemento){
+			const swalWithBootstrapButtons = Swal.mixin({
+				  customClass: {
+				    confirmButton: 'btn btn-success',
+				    cancelButton: 'btn btn-danger'
+				  },
+				  buttonsStyling: false
+				})
+
+				swalWithBootstrapButtons.fire({
+				  title: 'Estas Seguro?',
+				  text: "No podrás revertir esto!",
+				  icon: 'warning',
+				  showCancelButton: true,
+				  confirmButtonText: 'Si, borrar!',
+				  cancelButtonText: 'No, cancelar!',
+				  reverseButtons: true
+				}).then((result) => {
+				  if (result.dismiss === Swal.DismissReason.cancel) {
+					  swalWithBootstrapButtons.fire(
+						      'Cancelado',
+						      'Tu Banner esta a salvo :)',
+						      'error'
+				    )
+				  } else if (result.value){
+					  swalWithBootstrapButtons.fire(
+						      'Eliminado!',
+						      'Tu Banner fue eliminado.',
+						      'success'
+				    )
+				    setTimeout( function () { 
+					    location.href = elemento;
+	     		 	}, 1200);
+				  }
+				})
+		}
+	</script>
 
 </body>
