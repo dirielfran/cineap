@@ -92,7 +92,7 @@
 			                </c:choose>           
 			                <td>
 			                    <a href="${urlEdit}${noticia.id}" class="btn btn-success btn-lg btn-boton" role="button" title="Edit" ><span class="glyphicon glyphicon-pencil"></span></a>
-			                    <a href="#"  onclick="prueba('${urlDelete}${noticia.id}')" class="btn btn-success btn-lg btn-boton-danger" role="button" title="Eliminar" ><span class="glyphicon glyphicon-trash"></span></a>
+			                    <a href="#"  onclick='prueba("${urlDelete}${noticia.id}")' class="btn btn-success btn-lg btn-boton-danger" role="button" title="Eliminar" ><span class="glyphicon glyphicon-trash"></span></a>
 			                </td>
 			            </tr>
 		         	</c:forEach>		                    
